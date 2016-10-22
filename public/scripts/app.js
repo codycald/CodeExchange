@@ -1,2 +1,2 @@
 /*global angular */
-angular.module('stackoverflowclone', ['ui.bootstrap']);
+angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate']);
