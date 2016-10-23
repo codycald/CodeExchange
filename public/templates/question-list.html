@@ -1,0 +1,43 @@
+<div class='container' ng-controller='questionListCtrl'>
+    <div class='row'>
+        <div class='col-xs-10 col-xs-offset-1'>
+            <ul>
+                <div class=row ng-repeat='question in questions'>
+                    <div class='col-xs-3'>
+                        <div class=row>
+                            <div class='col-xs-4'>
+                                {{question.votes}}
+                            </div>
+                            <div class='col-xs-4'>
+                                {{question.answers}}
+                            </div>
+                            <div class='col-xs-4'>
+                                {{question.views}}
+                            </div>
+                        </div>
+                        <div class=row>
+                            <div class='col-xs-4'>votes</div>
+                            <div class='col-xs-4'>answers</div>
+                            <div class='col-xs-4'>views</div>
+                        </div>
+                    </div>
+                    <div class='col-xs-9'>
+                        <div class='row'>
+                            <div class='col-xs-12'>
+                                {{question.text}}
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-xs-8'>
+                                {{question.tags}}
+                            </div>
+                            <div class='col-xs-4'>
+                                asked by {{question.author}} 12 hours ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

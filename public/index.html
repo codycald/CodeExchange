@@ -7,10 +7,16 @@
     </head>
     <body>
         <ng-include src="'templates/navbar.html'"></ng-include>
-        <h1>Test page</h1>
+        <h3>Featured Questions</h3>
+        
+        <question-list></question-list>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/ui-bootstrap-tpls-2.2.0.min.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/questionList.js"></script>
+        <script type="text/javascript" src="/scripts/services/data.js"></script>
+        <script type="text/javascript" src="/scripts/directives/questionList.js"></script>
     </body>
 </html>
