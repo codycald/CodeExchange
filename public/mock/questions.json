@@ -1,98 +1,822 @@
 [
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "1"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "2"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "3"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "4"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "5"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "6"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "7"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "8"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "9"
     },
     {
-        "text": "This is a mock question that has a lot of text.................",
+        "title": "This is the questions title which could be long",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel cursus enim, a consectetur lectus. Phasellus scelerisque diam malesuada, suscipit nunc ut, hendrerit quam. Proin luctus est vitae pellentesque rhoncus. Aliquam libero dui, rutrum non augue eu, feugiat suscipit tortor. Phasellus hendrerit consequat nulla quis hendrerit. Donec malesuada in ligula eget interdum. In mattis ultrices vulputate. Donec ut convallis justo. Integer scelerisque mi a nisi faucibus cursus. Donec sagittis posuere nulla et mollis. In ultrices enim sed quam eleifend, nec auctor ligula egestas. Morbi lobortis magna eget imperdiet pellentesque. Ut tincidunt vehicula mi, sed commodo sem vulputate sed. Vivamus tempor sem eu metus iaculis, sit amet porta orci cursus. Fusce in tincidunt odio.",
         "author": "John Doe",
         "votes": 50,
-        "answers": 10,
         "views": 100,
-        "tags": "javascript css html blah blah"
-    },
-    {
-        "text": "This is a mock question that has a lot of text.................",
-        "author": "John Doe",
-        "votes": 50,
-        "answers": 10,
-        "views": 100,
-        "tags": "javascript css html blah blah"
-    },
-    {
-        "text": "This is a mock question that has a lot of text.................",
-        "author": "John Doe",
-        "votes": 50,
-        "answers": 10,
-        "views": 100,
-        "tags": "javascript css html blah blah"
+        "tags": "javascript css html node angular",
+        "comments": [
+                {
+                    "text": "This is the first comment to the question",
+                    "author": "Author 1"
+                },
+                {
+                    "text": "This is the second comment to the question",
+                    "author": "Author 2"
+                },
+                {
+                    "text": "This is the third comment to the question",
+                    "author": "Author 3"
+                }
+            ],
+        "answers": [
+                {
+                    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia neque vitae sapien volutpat sagittis eu at ligula. In a pharetra eros. Integer lobortis, enim non eleifend tempor, urna risus auctor dui, id tincidunt tortor risus convallis erat. Nunc tempor gravida blandit. Nulla pretium dictum odio, vel congue justo pulvinar nec. Nullam laoreet lacus quis aliquam laoreet. Quisque quis cursus ex. Etiam vitae felis sit amet mi mattis placerat. Vivamus ac tellus eget leo laoreet vestibulum. Maecenas eros ex, blandit quis ante et, aliquam tincidunt elit. Aliquam tempor et eros at pharetra. Donec venenatis efficitur ipsum sed facilisis. Sed sollicitudin bibendum gravida.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Ut euismod viverra dui. Nulla in tellus vel nibh viverra imperdiet ac a lacus. Nam iaculis nisi facilisis aliquam sagittis. Sed imperdiet placerat orci, at faucibus nunc consequat ut. Proin vitae nisi purus. Proin scelerisque elit eu nunc finibus sollicitudin. Pellentesque id fermentum risus. Nullam malesuada ante non dapibus euismod. Fusce libero justo, consectetur eget pharetra eu, pulvinar at dui. Maecenas orci ante, accumsan eget libero sit amet, porttitor fringilla nisi. Phasellus a molestie eros. Integer iaculis lacinia mi, ac ornare ex elementum in. Pellentesque lacus odio, viverra viverra nisl at, maximus pellentesque ante. Phasellus tincidunt lorem vel euismod pretium.",
+                    "author": "Author 2",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                },
+                {
+                    "text": "Cras in sapien volutpat, commodo massa id, fermentum tellus. Curabitur iaculis, nisl at dictum tincidunt, risus nibh tempus libero, sed dapibus eros ex ac nisi. Integer ornare magna eu placerat tincidunt. Maecenas at arcu blandit, eleifend dolor et, varius sapien. Suspendisse libero elit, dignissim sed pharetra at, congue ut nisi. Integer semper faucibus lacus, ut condimentum metus lobortis et. Ut pulvinar magna non tempus semper. Integer faucibus sodales elit mattis placerat. Praesent in justo in nisl viverra bibendum. Duis porttitor, orci sed pretium luctus, orci nisi venenatis arcu, iaculis venenatis mauris urna quis elit.",
+                    "author": "Author 1",
+                    "votes": 100,
+                    "comments": [
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 4"
+                        },
+                        {
+                            "text": "This is the second comment to the answer",
+                            "author": "Author 5"
+                        },
+                        {
+                            "text": "This is the first comment to the answer",
+                            "author": "Author 6"
+                        }
+                    ]
+                }
+            ],
+        "_id" : "10"
     }
 ]

@@ -1,0 +1,102 @@
+<div class='container' ng-controller='questionCtrl'>
+    <div class='row'>
+        <div class='col-xs-10 col-xs-offset-1'>
+            <div class='row'>
+                <!--title-->
+                <div class='col-xs-12'>
+                    <h3>{{question.title}}</h3>
+                </div>
+            </div>
+            <!--question-->
+            <div class='row'>
+                <div class='col-xs-2'>
+                    <!--Up arrow-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <button class='btn btn-default btn-xs'>Up</button>
+                        </div>
+                    </div>
+                    <!--Vote count-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <h3>{{question.votes}}</h3>
+                        </div>
+                    </div>
+                    <!--Down arrow-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <button class='btn btn-default btn-xs'>Down</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-xs-10 '>
+                    <!--text-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <p>{{question.text}}</p>
+                        </div>
+                    </div>
+                    <!--profile-->
+                    <div class='row pull-right'>
+                        <div col='col-xs-12'>
+                            <h4>{{question.author}}</h4>
+                        </div>
+                    </div>
+                    <!--comments-->
+                    <div class='row' ng-repeat='comment in question.comments'>
+                        <div class='col-xs-12'>
+                            <hr>
+                            <p>{{comment.text}} - {{comment.author}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--answers-->
+            <div class='row' ng-repeat='answer in question.answers'>
+                <hr>
+                <div class='col-xs-2'>
+                    <!--Up arrow-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <button class='btn btn-default btn-xs'>Up</button>
+                        </div>
+                    </div>
+                    <!--Vote count-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <h3>{{answer.votes}}</h3>
+                        </div>
+                    </div>
+                    <!--Down arrow-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <button class='btn btn-default btn-xs'>Down</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-xs-10 '>
+                    <!--text-->
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <p>{{answer.text}}</p>
+                        </div>
+                    </div>
+                    <!--profile-->
+                    <div class='row pull-right'>
+                        <div col='col-xs-12'>
+                            <h4>{{answer.author}}</h4>
+                        </div>
+                    </div>
+                    <!--comments-->
+                    <div class='row' ng-repeat='comment in answer.comments'>
+                        <div class='col-xs-12'>
+                            <hr>
+                            <p>{{comment.text}} - {{comment.author}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
