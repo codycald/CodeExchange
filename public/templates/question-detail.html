@@ -49,9 +49,29 @@
                             <p>{{comment.text}} - {{comment.author}}</p>
                         </div>
                     </div>
+                    <hr>
+                    <!--comment box-->
+                    <div class='row' ng-init='commenting = false'>
+                        <div class='col-xs-12'>
+                            <a href='' ng-click='commenting = !commenting'>add a comment</a>
+                        </div>
+                    </div>
+                    <div class='row' ng-show='commenting'>
+                        <div class='col-xs-12'>
+                            <div>
+                                <textarea cols='80' rows='7' ng-model='textArea'></textarea>
+                            </div>
+                        </div>
+                        <div class='col-xs-12'>
+                            <div>
+                                <button class='btn btn-primary' ng-click='submitQuestionComment(question); commenting = false;'>Submit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--answers-->
+            <h2>{{question.answers.length}} Answers</h2>
             <div class='row' ng-repeat='answer in question.answers'>
                 <hr>
                 <div class='col-xs-2'>
@@ -94,9 +114,40 @@
                             <p>{{comment.text}} - {{comment.author}}</p>
                         </div>
                     </div>
+                    <!--comment box-->
+                    <div class='row' ng-init='commenting = false'>
+                        <div class='col-xs-12'>
+                            <a href='' ng-click='commenting = !commenting'>add a comment</a>
+                        </div>
+                    </div>
+                    <div class='row' ng-show='commenting'>
+                        <div class='col-xs-12'>
+                            <div>
+                                <textarea cols='80' rows='7' ng-model='$parent.textArea'></textarea>
+                            </div>
+                        </div>
+                        <div class='col-xs-12'>
+                            <div>
+                                <button class='btn btn-primary' ng-click='submitQuestionComment(answer); commenting = false;'>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <hr>
+        <h3>Have an answer?</h3>
+        <!--answer box-->
+        <div class='row'>
+            <div class='col-xs-12'>
+                <div>
+                    <textarea cols='80' rows='10' ng-model='answerText'></textarea>
                 </div>
             </div>
-            
+            <div class='col-xs-12'>
+                <div>
+                    <button class='btn btn-primary' ng-click='submitAnswer(question);'>Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
