@@ -7,7 +7,15 @@
     </head>
     <body>
         <ng-include src="'templates/navbar.html'"></ng-include>
-        <h3>Featured Questions</h3>
+        
+        <div class='row'>
+            <div class='col-xs-6'>
+                <h3>Featured Questions</h3>
+            </div>
+            <div class='col-xs-4'>
+                <a class='btn btn-primary pull-right' href='#/question/new'>Ask a Question</a>
+            </div>
+        </div>
         
         <div ng-view></div>
         

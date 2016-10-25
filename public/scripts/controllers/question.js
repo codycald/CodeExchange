@@ -19,4 +19,18 @@ angular.module('stackoverflowclone')
         $scope.answerText = '';
     }
     
+    $scope.createQuestion = function() {
+        console.log('in controller: ' + $scope.inputText + ' ' + $scope.inputText)
+        var question = {title: $scope.inputText,
+                        text: $scope.textArea,
+                        author: 'John Doe',
+                        votes: 0,
+                        views: 0,
+                        tags: '',
+                        comments: [],
+                        answers: []
+                       }
+        dataService.createQuestion(question);
+    }
+    
 });

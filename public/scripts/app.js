@@ -7,6 +7,11 @@ angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
         controller: 'questionListCtrl'
     })
     
+    .when('/question/new', {
+        templateUrl: 'templates/question-new.html',
+        controller: 'questionCtrl'
+    })
+    
     .when('/question/:id', {
         templateUrl: 'templates/question-detail.html',
         controller: 'questionCtrl'

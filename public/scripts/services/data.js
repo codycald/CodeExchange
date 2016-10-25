@@ -1,6 +1,6 @@
 /*global angular*/
 angular.module('stackoverflowclone')
-.service('dataService', function($http) {
+.service('dataService', function($http, $location) {
 
     var questions = [];
     
@@ -20,5 +20,11 @@ angular.module('stackoverflowclone')
         });
         
         return filteredQuestions[0];
+    }
+    
+    this.createQuestion = function(question) {
+        question._id = questions[questions.length - 1]._id + 1;
+        questions.push(question);
+        $location.path('/');
     }
 });
