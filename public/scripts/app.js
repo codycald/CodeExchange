@@ -27,6 +27,10 @@ angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
         controller: 'registerCtrl'
     })
     
+    .when('/logout', {
+        controller: 'logoutCtrl'
+    })
+    
     .otherwise('/');
     
 });

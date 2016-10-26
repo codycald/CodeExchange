@@ -19,6 +19,14 @@ angular.module('stackoverflowclone')
         });
     }
     
+    this.logout = function() {
+        return $http.get('/api/logout')
+        .then(function(res) {
+            sessionService.clearSession();
+            return res.data;
+        });
+    }
+    
     this.isLoggedIn = function() {
         return !!sessionService.getUser();
     }

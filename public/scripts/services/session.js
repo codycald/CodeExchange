@@ -10,6 +10,7 @@ angular.module('stackoverflowclone')
     
     this.clearSession = function() {
         this.userData = null;
+        
     }
     
     this.getUser = function() {

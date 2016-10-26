@@ -12,9 +12,9 @@
 
     <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/login">Login</a></li>
-            <li><a href="#/register">Sign Up</a></li>
-            <li><a href="">Logout</a></li>
+            <li ng-show='!isLoggedIn'><a href="#/login">Login</a></li>
+            <li ng-show='!isLoggedIn'><a href="#/register">Sign Up</a></li>
+            <li ng-show='isLoggedIn'><a ng-controller='logoutCtrl' href='' ng-click='logout()'>Logout</a></li>
         </ul>
     </div>
 </nav>

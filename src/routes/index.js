@@ -13,4 +13,9 @@ router.post('/register', function(req, res) {
     res.json({username: 'testuser'});
 });
 
+router.get('/logout', function(req, res) {
+    console.log('Successfully logged out');
+    res.status(200).json({msg: "ok"});
+})
+
 module.exports = router;

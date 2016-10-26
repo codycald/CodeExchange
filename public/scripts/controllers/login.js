@@ -6,6 +6,7 @@ angular.module('stackoverflowclone')
         authService.login({username: $scope.username, password: $scope.password})
         .then(function(user) {
             $scope.setUser(user);
+            $location.path('/');
         }, function() {
             console.log('Error: could not login');
         });
