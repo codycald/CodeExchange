@@ -17,6 +17,16 @@ angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
         controller: 'questionCtrl'
     })
     
+    .when('/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl'
+    })
+    
+    .when('/register', {
+        templateUrl: 'templates/register.html',
+        controller: 'registerCtrl'
+    })
+    
     .otherwise('/');
     
 });
