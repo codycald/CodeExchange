@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
+angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstrap', 'ngAnimate', 'ngRoute'])
 .config(function($routeProvider) {
     $routeProvider
     .when('/', {
@@ -33,4 +33,15 @@ angular.module('stackoverflowclone', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
     
     .otherwise('/');
     
+})
+
+.run(function($rootScope, authService) {
+    authService.retrieveLoginStatus()
+    .then(function(userData) {
+        if (userData.authenticated) {
+            $rootScope.userData = userData;
+        } else {
+            $rootScope.userData = null;
+        }
+    });
 });

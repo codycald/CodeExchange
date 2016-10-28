@@ -1,5 +1,5 @@
 /*global angular*/
-angular.module('stackoverflowclone')
+angular.module('stackoverflowclone.service')
 .service('dataService', function($http, $location) {
 
     var questions = [];

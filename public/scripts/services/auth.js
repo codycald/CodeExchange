@@ -1,6 +1,6 @@
 /*global angular*/
-angular.module('stackoverflowclone')
-.service('authService', function($http, sessionService) {
+angular.module('stackoverflowclone.service')
+.service('authService', function($http, $q, sessionService) {
     this.login = function(user) {
         return $http.post('/api/login', user)
         .then(function(res) {
@@ -29,6 +29,26 @@ angular.module('stackoverflowclone')
     
     this.isLoggedIn = function() {
         return !!sessionService.getUser();
+    }
+    
+    this.retrieveLoginStatus = function() {
+        var defer = $q.defer();
+        
+        $http.get('/api/status')
+        .then(function(res) {
+            if (res.data.authenticated) {
+                console.log('here3');
+                sessionService.createSession(res.data);
+            } else {
+                sessionService.clearSession();
+            }
+            defer.resolve(res.data);
+        })
+        .catch(function(err) {
+            defer.reject(err);
+        });
+        
+        return defer.promise;
     }
     
 });

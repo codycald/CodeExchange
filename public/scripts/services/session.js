@@ -1,19 +1,18 @@
 /*global angular*/
-angular.module('stackoverflowclone')
-.service('sessionService', function() {
+angular.module('stackoverflowclone.service')
+.service('sessionService', function($rootScope) {
     
-    this.userData = null;
+    $rootScope.userData = null;
     
-    this.createSession = function(data) {
-        this.userData = data;
+    this.createSession = function(userData) {
+        $rootScope.userData = userData;
     }
     
     this.clearSession = function() {
-        this.userData = null;
-        
+        $rootScope.userData = null;
     }
     
     this.getUser = function() {
-        return this.userData;
+        return $rootScope.userData;
     }
 });

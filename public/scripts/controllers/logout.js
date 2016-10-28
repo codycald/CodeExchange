@@ -6,7 +6,6 @@ angular.module('stackoverflowclone')
         authService.logout()
         .then(function(res) {
             sessionService.clearSession();
-            $scope.setUser(null);
             $location.path('/');
         });
     };
