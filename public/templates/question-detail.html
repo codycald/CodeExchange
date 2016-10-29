@@ -46,7 +46,7 @@
                     <div class='row' ng-repeat='comment in question.comments'>
                         <div class='col-xs-12'>
                             <hr>
-                            <p>{{comment.text}} - {{comment.author}}</p>
+                            <p>{{comment.text}} - {{comment.author.username}}</p>
                         </div>
                     </div>
                     <div class='row'>
@@ -68,7 +68,7 @@
                         </div>
                         <div class='col-xs-12'>
                             <div>
-                                <button class='btn btn-primary' ng-click='submitQuestionComment(question); commenting = false;'>Submit</button>
+                                <button class='btn btn-primary' ng-click='submitComment(question); commenting = false;'>Submit</button>
                             </div>
                         </div>
                     </div>
@@ -108,14 +108,14 @@
                     <!--profile-->
                     <div class='row pull-right'>
                         <div col='col-xs-12'>
-                            <h4>{{answer.author}}</h4>
+                            <h4>{{answer.author.username}}</h4>
                         </div>
                     </div>
                     <!--comments-->
                     <div class='row' ng-repeat='comment in answer.comments'>
                         <div class='col-xs-12'>
                             <hr>
-                            <p>{{comment.text}} - {{comment.author}}</p>
+                            <p>{{comment.text}} - {{comment.author.username}}</p>
                         </div>
                     </div>
                     <!--comment box-->
@@ -132,7 +132,7 @@
                         </div>
                         <div class='col-xs-12'>
                             <div>
-                                <button class='btn btn-primary' ng-click='submitQuestionComment(answer); commenting = false;'>Submit</button>
+                                <button class='btn btn-primary' ng-click='submitComment(answer); commenting = false;'>Submit</button>
                             </div>
                         </div>
                     </div>

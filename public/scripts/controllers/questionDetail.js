@@ -6,16 +6,24 @@ angular.module('stackoverflowclone')
         $scope.question = res.data.question;
     });
     
-    $scope.submitQuestionComment = function(qaPost) {
-        if ($scope.textArea)
-            qaPost.comments.push({text: $scope.textArea, author: 'Author 1'});
+    $scope.submitComment = function(qaPost) {
+        if ($scope.textArea) {
+            console.log('ID is: ' + $routeParams.id);
+            console.log('QAPOST ID IS : ' + qaPost._id);
+            dataService.submitComment($routeParams.id, {id: qaPost._id, text: $scope.textArea, username: $scope.userData.username});
+            qaPost.comments.push({text: $scope.textArea, author: {username: $scope.userData.username}});
+        }
         $scope.textArea = '';
     }
     
     $scope.submitAnswer = function(question) {
-        if ($scope.answerText)
+        if ($scope.answerText) {
+            dataService.submitAnswer($routeParams.id, {text: $scope.answerText, username: $scope.userData.username});
+        }
             question.answers.push({ text: $scope.answerText, 
-                                    author: 'Author 1',
+                                    author: {
+                                        username: $scope.userData.username
+                                    },
                                     votes: 0,
                                     comments: []
                                  });

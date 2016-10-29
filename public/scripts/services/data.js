@@ -24,4 +24,13 @@ angular.module('stackoverflowclone.service')
             $location.path('/');
         });
     }
+    
+    this.submitAnswer = function(question_id, answer) {
+        return $http.post('/api/questions/' + question_id + '/answer', answer);
+    }
+    
+    this.submitComment = function(question_id, comment) {
+        return $http.post('/api/questions/' + question_id + '/comment', comment);
+    }
+
 });

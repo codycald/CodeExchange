@@ -83,4 +83,63 @@ router.post('/questions', function(req, res) {
     });
 });
 
+//================
+// Answer routes
+//================
+
+router.post('/questions/:id/answer', function(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+       if (err) {
+           return res.status(500).json({message: err.message});
+       }
+       var answer = {
+           text: req.body.text,
+           author: {
+               username: req.body.username,
+               id: req.user._id
+           },
+           votes: 0,
+           comments: []
+       }
+       question.answers.push(answer);
+       question.save();
+    });
+});
+
+router.post('/questions/:id/comment', function(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+       if (err) {
+           return res.status(500).json({message: err.message});
+       }
+       var comment = {
+           text: req.body.text,
+           author: {
+               username: req.body.username,
+               id: req.user.id
+           }
+       }
+       
+       if (req.params.id == req.body.id) {
+           question.comments.push(comment);
+           console.log(question.comments);
+           question.save();
+           return res.status(200).json({message: 'Comment added to question'});
+       }
+
+       var answer = question.answers.filter(function(ans) {
+           return ans._id == req.body.id;
+       });
+
+       if (answer.length != 1) {
+           return res.status(500).json({message: 'Could not add comment to answer'});
+       }
+       answer[0].comments.push(comment);
+       question.save();
+       res.status(200).json({message: 'Comment added to answer'});
+       
+    });
+});
+
+
+
 module.exports = router;
