@@ -10,21 +10,18 @@ angular.module('stackoverflowclone.service')
         });
     });
     
-    this.getQuestionList = function() {
-        return questions;
+    this.getQuestionList = function(cb) {
+        $http.get('/api/questions').then(cb);
     }
     
-    this.getQuestionById = function(id)  {
-        var filteredQuestions = questions.filter(function(question) {
-            return question._id === id;
-        });
-        
-        return filteredQuestions[0];
+    this.getQuestionById = function(id, cb)  {
+        $http.get('/api/questions/' + id).then(cb);
     }
     
     this.createQuestion = function(question) {
-        question._id = questions[questions.length - 1]._id + 1;
-        questions.push(question);
-        $location.path('/');
+        return $http.post('/api/questions', question).then(function() {
+            questions.push(question);
+            $location.path('/');
+        });
     }
 });

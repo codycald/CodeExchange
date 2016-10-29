@@ -9,12 +9,12 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
     
     .when('/question/new', {
         templateUrl: 'templates/question-new.html',
-        controller: 'questionCtrl'
+        controller: 'questionCreationCtrl'
     })
     
     .when('/question/:id', {
         templateUrl: 'templates/question-detail.html',
-        controller: 'questionCtrl'
+        controller: 'questionDetailCtrl'
     })
     
     .when('/login', {
