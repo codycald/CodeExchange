@@ -30,4 +30,16 @@ angular.module('stackoverflowclone')
         $scope.answerText = '';
     }
     
+    $scope.upvote = function(qaPost) {
+        dataService.upvote($routeParams.id, {id: qaPost._id}, function(res) {
+            qaPost.votes++;
+        });
+    }
+    
+    $scope.downvote = function(qaPost) {
+        dataService.downvote($routeParams.id, {id: qaPost._id}, function(res) {
+            qaPost.votes--;
+        });
+    }
+    
 });

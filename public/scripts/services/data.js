@@ -32,5 +32,13 @@ angular.module('stackoverflowclone.service')
     this.submitComment = function(question_id, comment) {
         return $http.post('/api/questions/' + question_id + '/comment', comment);
     }
-
+    
+    this.upvote = function(question_id, post, cb) {
+        $http.post('/api/questions/' + question_id  + '/upvote', post).then(cb);
+    }
+    
+    this.downvote = function(question_id, post, cb) {
+        $http.post('/api/questions/' + question_id  + '/downvote', post).then(cb);
+    }
+    
 });

@@ -140,6 +140,58 @@ router.post('/questions/:id/comment', function(req, res) {
     });
 });
 
+//================================
+// Upvoting / Downvoting Routes
+//==================================
 
+router.post('/questions/:id/upvote', function(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+        if (err) {
+            return res.status(500).json({message: err.message});
+        }
+        
+        if (req.params.id == req.body.id) {
+            question.votes++;
+            question.save();
+            return res.status(200).json({message: 'Upvoted question'});
+        }
+        
+        var answer = question.answers.find(function(ans) {
+            return ans._id == req.body.id;
+        });
+        
+        if (!answer) {
+            return res.status(500).json({message: 'Could not upvote answer'});
+        }
+        answer.votes++;
+        question.save();
+        res.status(200).json({message: 'Upvoted answer'});
+    });
+});
+
+router.post('/questions/:id/downvote', function(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+        if (err) {
+            return res.status(500).json({message: err.message});
+        }
+        
+        if (req.params.id == req.body.id) {
+            question.votes--;
+            question.save();
+            return res.status(200).json({message: 'Downvoted question'});
+        }
+        
+        var answer = question.answers.find(function(ans) {
+            return ans._id == req.body.id;
+        });
+        
+        if (!answer) {
+            return res.status(500).json({message: 'Could not downvote answer'});
+        }
+        answer.votes--;
+        question.save();
+        res.status(200).json({message: 'Downvoted answer'});
+    });
+});
 
 module.exports = router;

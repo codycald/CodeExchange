@@ -37,7 +37,6 @@ angular.module('stackoverflowclone.service')
         $http.get('/api/status')
         .then(function(res) {
             if (res.data.authenticated) {
-                console.log('here3');
                 sessionService.createSession(res.data);
             } else {
                 sessionService.clearSession();
