@@ -25,12 +25,12 @@ angular.module('stackoverflowclone.service')
         });
     }
     
-    this.submitAnswer = function(question_id, answer) {
-        return $http.post('/api/questions/' + question_id + '/answer', answer);
+    this.submitAnswer = function(question_id, answer, cb) {
+        $http.post('/api/questions/' + question_id + '/answer', answer).then(cb);
     }
     
-    this.submitComment = function(question_id, comment) {
-        return $http.post('/api/questions/' + question_id + '/comment', comment);
+    this.submitComment = function(question_id, comment, cb) {
+        return $http.post('/api/questions/' + question_id + '/comment', comment).then(cb);
     }
     
     this.upvote = function(question_id, post, cb) {

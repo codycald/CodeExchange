@@ -1,6 +1,7 @@
 /*global angular */
 angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstrap', 'ngAnimate', 'ngRoute'])
 .config(function($routeProvider) {
+
     $routeProvider
     .when('/', {
         templateUrl: 'templates/question-list.html',

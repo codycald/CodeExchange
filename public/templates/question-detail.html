@@ -57,7 +57,7 @@
                     <!--comment box-->
                     <div class='row' ng-init='commenting = false'>
                         <div class='col-xs-12'>
-                            <a href='' ng-click='commenting = !commenting'>add a comment</a>
+                            <a href='' ng-click='commenting = ensureLoggedIn(commenting);'>add a comment</a>
                         </div>
                     </div>
                     <div class='row' ng-show='commenting'>
@@ -121,7 +121,7 @@
                     <!--comment box-->
                     <div class='row' ng-init='commenting = false'>
                         <div class='col-xs-12'>
-                            <a href='' ng-click='commenting = !commenting'>add a comment</a>
+                            <a href='' ng-click='commenting = ensureLoggedIn(commenting);'>add a comment</a>
                         </div>
                     </div>
                     <div class='row' ng-show='commenting'>

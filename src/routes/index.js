@@ -61,7 +61,7 @@ router.get('/questions/:id', function(req, res) {
 });
 
 // Create
-router.post('/questions', function(req, res) {
+router.post('/questions', isLoggedIn, function(req, res) {
     var question = {
         title: req.body.title,
         text: req.body.text,
@@ -87,7 +87,7 @@ router.post('/questions', function(req, res) {
 // Answer routes
 //================
 
-router.post('/questions/:id/answer', function(req, res) {
+router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
     Question.findById(req.params.id, function(err, question) {
        if (err) {
            return res.status(500).json({message: err.message});
@@ -103,10 +103,11 @@ router.post('/questions/:id/answer', function(req, res) {
        }
        question.answers.push(answer);
        question.save();
+       res.json({answer: question.answers.slice(-1)[0]});
     });
 });
 
-router.post('/questions/:id/comment', function(req, res) {
+router.post('/questions/:id/comment', isLoggedIn, function(req, res) {
     Question.findById(req.params.id, function(err, question) {
        if (err) {
            return res.status(500).json({message: err.message});
@@ -121,21 +122,20 @@ router.post('/questions/:id/comment', function(req, res) {
        
        if (req.params.id == req.body.id) {
            question.comments.push(comment);
-           console.log(question.comments);
            question.save();
-           return res.status(200).json({message: 'Comment added to question'});
+           return res.status(200).json({comment: question.comments.slice(-1)[0]});
        }
 
-       var answer = question.answers.filter(function(ans) {
+       var answer = question.answers.find(function(ans) {
            return ans._id == req.body.id;
        });
 
-       if (answer.length != 1) {
+       if (!answer) {
            return res.status(500).json({message: 'Could not add comment to answer'});
        }
-       answer[0].comments.push(comment);
+       answer.comments.push(comment);
        question.save();
-       res.status(200).json({message: 'Comment added to answer'});
+       res.status(200).json({comment: answer.comments.slice(-1)[0]});
        
     });
 });
@@ -144,7 +144,7 @@ router.post('/questions/:id/comment', function(req, res) {
 // Upvoting / Downvoting Routes
 //==================================
 
-router.post('/questions/:id/upvote', function(req, res) {
+router.post('/questions/:id/upvote', isLoggedIn, function(req, res) {
     Question.findById(req.params.id, function(err, question) {
         if (err) {
             return res.status(500).json({message: err.message});
@@ -169,7 +169,7 @@ router.post('/questions/:id/upvote', function(req, res) {
     });
 });
 
-router.post('/questions/:id/downvote', function(req, res) {
+router.post('/questions/:id/downvote', isLoggedIn, function(req, res) {
     Question.findById(req.params.id, function(err, question) {
         if (err) {
             return res.status(500).json({message: err.message});
@@ -193,5 +193,13 @@ router.post('/questions/:id/downvote', function(req, res) {
         res.status(200).json({message: 'Downvoted answer'});
     });
 });
+
+// Middleware
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    return res.status(500).json({ message: 'You must be logged in to do that' });
+}
 
 module.exports = router;
