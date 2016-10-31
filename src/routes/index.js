@@ -162,15 +162,14 @@ router.post('/questions/:id/upvote', isLoggedIn, function(req, res) {
                 return post.id.equals(req.body.id);
             });
             
-            // Prevent multiple upvotes
-            if (votedPost && votedPost.isupvoted) {
-                return res.status(403).json({message: 'Multiple upvotes forbidden'});
-            }
-            
             // Upvoting the question
             if (req.params.id == req.body.id) {
                 // Updating a previous vote
-                if (votedPost) {
+                if (votedPost && votedPost.isupvoted) {
+                    var index = user.votedPosts.indexOf(votedPost);
+                    user.votedPosts.splice(index, 1);
+                    question.votes--;
+                } else if (votedPost && !votedPost.isupvoted) {
                     votedPost.isupvoted = true;
                     question.votes += 2;
                 } else {
@@ -182,7 +181,7 @@ router.post('/questions/:id/upvote', isLoggedIn, function(req, res) {
                 return res.status(200).json({voteTotal: question.votes, votedPosts: user.votedPosts});
             }
             
-            // Downvoting an answer
+            // Upvoting an answer
             var answer = question.answers.find(function(ans) {
                 return ans._id == req.body.id;
             });
@@ -192,7 +191,11 @@ router.post('/questions/:id/upvote', isLoggedIn, function(req, res) {
             }
             
             // Updating previous vote
-            if (votedPost) {
+            if (votedPost && votedPost.isupvoted) {
+                var index = user.votedPosts.indexOf(votedPost);
+                user.votedPosts.splice(index, 1);
+                answer.votes--;
+            } else if (votedPost && !votedPost.isupvoted) {
                 votedPost.isupvoted = true;
                 answer.votes += 2;
             } else {
@@ -224,15 +227,14 @@ router.post('/questions/:id/downvote', isLoggedIn, function(req, res) {
                 return post.id.equals(req.body.id);
             });
             
-            // Prevent multiple downvotes
-            if (votedPost && !votedPost.isupvoted) {
-                return res.status(403).json({message: 'Multiple downvotes forbidden'});
-            }
-            
             // Downvoting the question
             if (req.params.id == req.body.id) {
                 // Updating a previous vote
-                if (votedPost) {
+                if (votedPost && !votedPost.isupvoted) {
+                    var index = user.votedPosts.indexOf(votedPost);
+                    user.votedPosts.splice(index, 1);
+                    question.votes++;
+                } else if (votedPost && votedPost.isupvoted) {
                     votedPost.isupvoted = false;
                     question.votes -= 2;
                 } else {
@@ -254,7 +256,11 @@ router.post('/questions/:id/downvote', isLoggedIn, function(req, res) {
             }
             
             // Updating previous vote
-            if (votedPost) {
+            if (votedPost && !votedPost.isupvoted) {
+                var index = user.votedPosts.indexOf(votedPost);
+                user.votedPosts.splice(index, 1);
+                answer.votes++;
+            } else if (votedPost && votedPost.isupvoted) {
                 votedPost.isupvoted = false;
                 answer.votes -= 2;
             } else {
