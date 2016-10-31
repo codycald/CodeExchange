@@ -1,6 +1,6 @@
 /*global angular*/
 angular.module('stackoverflowclone')
-.controller('questionDetailCtrl', function($scope, $location, $routeParams, dataService, authService, sessionService) {
+.controller('questionDetailCtrl', function($scope, $location, $routeParams, $sanitize, dataService, authService, sessionService) {
     
     dataService.getQuestionById($routeParams.id, function(res) {
         $scope.question = res.data.question;
@@ -18,7 +18,8 @@ angular.module('stackoverflowclone')
     $scope.submitAnswer = function(question) {
         $scope.checkLoginStatus();
         if ($scope.answerText) {
-            dataService.submitAnswer($routeParams.id, {text: $scope.answerText, username: $scope.userData.username}, function(res) {
+            var text = $sanitize($scope.answerText);
+            dataService.submitAnswer($routeParams.id, {text: text, username: $scope.userData.username}, function(res) {
                 question.answers.push(res.data.answer);
             });
 

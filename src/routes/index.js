@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var Question = require('../models/question');
 var passport = require('passport');
+var sanitizer = require('express-sanitizer');
 
 // Login
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -62,6 +63,9 @@ router.get('/questions/:id', function(req, res) {
 
 // Create
 router.post('/questions', isLoggedIn, function(req, res) {
+    req.body.title = req.sanitize(req.body.title);
+    req.body.text = req.sanitize(req.body.text);
+    
     var question = {
         title: req.body.title,
         text: req.body.text,
@@ -89,6 +93,9 @@ router.post('/questions', isLoggedIn, function(req, res) {
 //================
 
 router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
+    
+    req.body.text = req.sanitize(req.body.text);
+    
     Question.findById(req.params.id, function(err, question) {
        if (err) {
            return res.status(500).json({message: err.message});
@@ -110,6 +117,9 @@ router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
 });
 
 router.post('/questions/:id/comment', isLoggedIn, function(req, res) {
+    
+    req.body.text = req.sanitize(req.body.text);
+    
     Question.findById(req.params.id, function(err, question) {
        if (err) {
            return res.status(500).json({message: err.message});

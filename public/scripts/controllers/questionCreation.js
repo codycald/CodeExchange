@@ -1,11 +1,12 @@
 /*global angular*/
 angular.module('stackoverflowclone')
-.controller('questionCreationCtrl', function($scope, dataService, $routeParams) {
+.controller('questionCreationCtrl', function($scope, $sanitize, dataService, $routeParams) {
     
     $scope.createQuestion = function() {
-        console.log($scope.userData.username);
-        var question = {title: $scope.inputText,
-                        text: $scope.textArea,
+        var title = $sanitize($scope.inputText);
+        var text = $sanitize($scope.textArea);
+        var question = {title: title,
+                        text: text,
                         username: $scope.userData.username,
                         votes: 0,
                         views: 0,

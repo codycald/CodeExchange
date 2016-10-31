@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstrap', 'ngAnimate', 'ngRoute'])
+angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstrap', 'ngAnimate', 'ngRoute', 'ngSanitize'])
 .config(function($routeProvider) {
 
     $routeProvider

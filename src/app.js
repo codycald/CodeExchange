@@ -3,6 +3,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var sanitizer = require('express-sanitizer');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
@@ -13,6 +14,7 @@ mongoose.connect('mongodb://localhost/stackoverflowclone');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(sanitizer());
 
 // Passport config
 app.use(require("express-session")({
