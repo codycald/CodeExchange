@@ -1,6 +1,6 @@
 /*global angular*/
 angular.module('stackoverflowclone.service')
-.service('dataService', function($http, $location) {
+.service('dataService', function($http, $location, sessionService) {
 
     var questions = [];
     
@@ -33,12 +33,17 @@ angular.module('stackoverflowclone.service')
         return $http.post('/api/questions/' + question_id + '/comment', comment).then(cb);
     }
     
-    this.upvote = function(question_id, post, cb) {
-        $http.post('/api/questions/' + question_id  + '/upvote', post).then(cb);
+    this.upvote = function(question_id, post) {
+        return $http.post('/api/questions/' + question_id  + '/upvote', post)
+        .success(function(res) {
+            sessionService.updateUser('votedPosts', res.votedPosts);
+        });
     }
     
-    this.downvote = function(question_id, post, cb) {
-        $http.post('/api/questions/' + question_id  + '/downvote', post).then(cb);
+    this.downvote = function(question_id, post) {
+        return $http.post('/api/questions/' + question_id  + '/downvote', post)
+        .success(function(res) {
+            sessionService.updateUser('votedPosts', res.votedPosts);
+        });
     }
-    
 });

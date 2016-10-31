@@ -15,4 +15,8 @@ angular.module('stackoverflowclone.service')
     this.getUser = function() {
         return $rootScope.userData;
     }
+    
+    this.updateUser = function(key, data) {
+        $rootScope.userData[key] = data;
+    }
 });

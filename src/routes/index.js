@@ -6,7 +6,7 @@ var passport = require('passport');
 
 // Login
 router.post('/login', passport.authenticate('local'), function(req, res) {
-    res.json({username: req.user.username});
+    res.json({username: req.user.username, votedPosts: req.user.votedPosts});
 });
 
 // Register
@@ -16,7 +16,7 @@ router.post('/register', function(req, res) {
             console.log(err);
         } else {
             passport.authenticate('local')(req, res, function() {
-                res.json({username: req.user.username});
+                res.json({username: req.user.username, votedPosts: user.votedPosts});
             });
         }
     });
@@ -31,7 +31,7 @@ router.get('/logout', function(req, res) {
 // Status
 router.get('/status', function(req, res) {
     if (req.isAuthenticated()) {
-        return res.status(200).json({authenticated: true, username: req.user.username});
+        return res.status(200).json({authenticated: true, username: req.user.username, votedPosts: req.user.votedPosts});
     }
     return res.status(200).json({authenticated: false});
 });
@@ -145,52 +145,126 @@ router.post('/questions/:id/comment', isLoggedIn, function(req, res) {
 //==================================
 
 router.post('/questions/:id/upvote', isLoggedIn, function(req, res) {
-    Question.findById(req.params.id, function(err, question) {
+    
+    User.findById(req.user.id, function(err, user) {
         if (err) {
+            // Should never reach this point
             return res.status(500).json({message: err.message});
         }
         
-        if (req.params.id == req.body.id) {
-            question.votes++;
+        Question.findById(req.params.id, function(err, question) {
+            if (err) {
+                return res.status(500).json({message: err.message});
+            }
+            
+            // Check if the user has voted on this post before
+            var votedPost = user.votedPosts.find(function(post) {
+                return post.id.equals(req.body.id);
+            });
+            
+            // Prevent multiple upvotes
+            if (votedPost && votedPost.isupvoted) {
+                return res.status(403).json({message: 'Multiple upvotes forbidden'});
+            }
+            
+            // Upvoting the question
+            if (req.params.id == req.body.id) {
+                // Updating a previous vote
+                if (votedPost) {
+                    votedPost.isupvoted = true;
+                    question.votes += 2;
+                } else {
+                    question.votes++;
+                    user.votedPosts.push({id: req.body.id, isupvoted: true});
+                }
+                question.save();
+                user.save();
+                return res.status(200).json({voteTotal: question.votes, votedPosts: user.votedPosts});
+            }
+            
+            // Downvoting an answer
+            var answer = question.answers.find(function(ans) {
+                return ans._id == req.body.id;
+            });
+            
+            if (!answer) {
+                return res.status(500).json({message: 'Could not upvote answer'});
+            }
+            
+            // Updating previous vote
+            if (votedPost) {
+                votedPost.isupvoted = true;
+                answer.votes += 2;
+            } else {
+                answer.votes++;
+                user.votedPosts.push({id: req.body.id, isupvoted: true});
+            }
             question.save();
-            return res.status(200).json({message: 'Upvoted question'});
-        }
-        
-        var answer = question.answers.find(function(ans) {
-            return ans._id == req.body.id;
+            user.save();
+            return res.status(200).json({voteTotal: answer.votes, votedPosts: user.votedPosts});
         });
-        
-        if (!answer) {
-            return res.status(500).json({message: 'Could not upvote answer'});
-        }
-        answer.votes++;
-        question.save();
-        res.status(200).json({message: 'Upvoted answer'});
     });
 });
 
 router.post('/questions/:id/downvote', isLoggedIn, function(req, res) {
-    Question.findById(req.params.id, function(err, question) {
+    
+    User.findById(req.user.id, function(err, user) {
         if (err) {
+            // Should never reach this point
             return res.status(500).json({message: err.message});
         }
         
-        if (req.params.id == req.body.id) {
-            question.votes--;
+        Question.findById(req.params.id, function(err, question) {
+            if (err) {
+                return res.status(500).json({message: err.message});
+            }
+            
+            // Check if the user has voted on this post before
+            var votedPost = user.votedPosts.find(function(post) {
+                return post.id.equals(req.body.id);
+            });
+            
+            // Prevent multiple downvotes
+            if (votedPost && !votedPost.isupvoted) {
+                return res.status(403).json({message: 'Multiple downvotes forbidden'});
+            }
+            
+            // Downvoting the question
+            if (req.params.id == req.body.id) {
+                // Updating a previous vote
+                if (votedPost) {
+                    votedPost.isupvoted = false;
+                    question.votes -= 2;
+                } else {
+                    question.votes--;
+                    user.votedPosts.push({id: req.body.id, isupvoted: false});
+                }
+                question.save();
+                user.save();
+                return res.status(200).json({voteTotal: question.votes, votedPosts: user.votedPosts});
+            }
+            
+            // Downvoting an answer
+            var answer = question.answers.find(function(ans) {
+                return ans._id == req.body.id;
+            });
+            
+            if (!answer) {
+                return res.status(500).json({message: 'Could not downvote answer'});
+            }
+            
+            // Updating previous vote
+            if (votedPost) {
+                votedPost.isupvoted = false;
+                answer.votes -= 2;
+            } else {
+                answer.votes--;
+                user.votedPosts.push({id: req.body.id, isupvoted: false});
+            }
             question.save();
-            return res.status(200).json({message: 'Downvoted question'});
-        }
-        
-        var answer = question.answers.find(function(ans) {
-            return ans._id == req.body.id;
+            user.save();
+            return res.status(200).json({voteTotal: answer.votes, votedPosts: user.votedPosts});
         });
-        
-        if (!answer) {
-            return res.status(500).json({message: 'Could not downvote answer'});
-        }
-        answer.votes--;
-        question.save();
-        res.status(200).json({message: 'Downvoted answer'});
     });
 });
 

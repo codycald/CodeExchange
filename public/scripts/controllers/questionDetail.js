@@ -28,15 +28,15 @@ angular.module('stackoverflowclone')
     
     $scope.upvote = function(qaPost) {
         $scope.checkLoginStatus();
-        dataService.upvote($routeParams.id, {id: qaPost._id}, function(res) {
-            qaPost.votes++;
+        dataService.upvote($routeParams.id, {id: qaPost._id}).then(function(res){
+            qaPost.votes =  res.data.voteTotal;
         });
     }
     
     $scope.downvote = function(qaPost) {
         $scope.checkLoginStatus();
-        dataService.downvote($routeParams.id, {id: qaPost._id}, function(res) {
-            qaPost.votes--;
+        dataService.downvote($routeParams.id, {id: qaPost._id}).then(function(res){
+            qaPost.votes = res.data.voteTotal;
         });
     }
     
