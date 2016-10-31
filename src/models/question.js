@@ -17,7 +17,8 @@ var Answer =  new mongoose.Schema({
     text: String,
     author: Author,
     votes: Number,
-    comments: [Comment]
+    comments: [Comment],
+    date: Date
 });
 
 var Question = new mongoose.Schema({
@@ -28,7 +29,8 @@ var Question = new mongoose.Schema({
     votes: Number,
     comments: [Comment],
     answers: [Answer],
-    tags: [String]
+    tags: [String],
+    date: Date
 });
 
 module.exports = mongoose.model('Question', Question);

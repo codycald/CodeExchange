@@ -32,7 +32,7 @@
                                 {{question.tags}}
                             </div>
                             <div class='col-xs-4'>
-                                asked by {{question.author.username}} 12 hours ago
+                                asked {{question.date | date: 'MMM d, y'}} by {{question.author.username}}
                             </div>
                         </div>
                     </div>

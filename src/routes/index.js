@@ -72,7 +72,8 @@ router.post('/questions', isLoggedIn, function(req, res) {
         votes: 0,
         views: 0,
         comments: [],
-        answers: []
+        answers: [],
+        date: Date.now()
     };
     
     Question.create(question, function(err, newQuestion) {
@@ -99,7 +100,8 @@ router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
                id: req.user._id
            },
            votes: 0,
-           comments: []
+           comments: [],
+           date: Date.now()
        }
        question.answers.push(answer);
        question.save();
