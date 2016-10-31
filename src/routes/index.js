@@ -4,6 +4,7 @@ var User = require('../models/user');
 var Question = require('../models/question');
 var passport = require('passport');
 var sanitizer = require('express-sanitizer');
+var validator = require('express-validator');
 
 // Login
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -12,6 +13,13 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
 
 // Register
 router.post('/register', function(req, res) {
+    req.checkBody('username', 'Invalid username').isAlphanumeric();
+    var err = req.validationErrors();
+    
+    if (err) {
+        return res.status(403).json({err: err});
+    } 
+    
     User.register({username: req.body.username}, req.body.password, function(err, user) {
         if (err) {
             console.log(err);

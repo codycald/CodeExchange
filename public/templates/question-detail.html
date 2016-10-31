@@ -153,10 +153,19 @@
         <!--answer box-->
         <div class='row'>
             <div class='col-xs-12'>
-                <textarea cols='80' rows='10' ng-model='answerText'></textarea>
-            </div>
-            <div class='col-xs-12'>
-                <button class='btn btn-primary' ng-click='submitAnswer(question);'>Submit</button>
+                <form ng-submit='submitAnswer(question)' name='newAnswerForm' novalidate>
+                    
+                    <div class='form-group' ng-class=" { 'has-error': newAnswerForm.text.$touched && newAnswerForm.text.$invalid }">
+                        <textarea class='form-control' name='text' ng-model='answerText' cols='80' rows='15' ng-minlength='10'></textarea>
+                    </div>
+                    
+                    <div class='help-block' ng-messages='newAnswerForm.text.$error' ng-if='newAnswerForm.text.$touched'>
+                        <p ng-message='minlength'>Answer text too short</p>
+                    </div>
+                    
+                    <input type='submit' id='submit' class='btn btn-primary' ng-disabled='newAnswerForm.text.$invalid || !answerText'></input>
+                    
+                </form>
             </div>
         </div>
     </div>
