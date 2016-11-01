@@ -1,0 +1,19 @@
+<div class='container' ng-controller='answerEditCtrl'>
+    <div class='row'>
+        <div class='col-xs-6 col-xs-offset-2'>
+            <form ng-submit='editAnswer()' name='editAnswerForm' novalidate>
+
+                <div class='form-group' ng-class=" { 'has-error': editAnswerForm.text.$touched && editAnswerForm.text.$invalid }">
+                    <textarea class='form-control' name='text' ng-model='answer.text' cols='80' rows='15' ng-minlength='5' required ></textarea>
+                </div>
+                
+                <div class='help-block' ng-messages='editAnswerForm.text.$error' ng-if='editAnswerForm.text.$touched'>
+                    <p ng-message='required'>Answer text required</p>
+                    <p ng-message='minlength'>Answer text too short</p>
+                </div>
+                
+                <input type='submit' id='submit' class='btn btn-primary'></input>
+            </form>
+        </div>
+    </div>
+</div>

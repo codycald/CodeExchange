@@ -47,6 +47,16 @@
                             </div>
                         </div>
                     </div>
+                    <!--edit/delete-->
+                    <div class='row' ng-show='userData && question.author.username === userData.username'>
+                        <div class='col-xs-12'>
+                            <div class='row'>
+                                <button class='btn btn-xs btn-warning' ng-click='editQuestion(question)'>Edit</button>
+                                <button class='btn btn-xs btn-danger' ng-click='deleteQuestion(question)'>Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!--comments-->
                     <div class='row' ng-repeat='comment in question.comments'>
                         <div class='col-xs-12'>
@@ -118,6 +128,15 @@
                             </div>
                             <div class='row'>
                                 <h4>{{answer.author.username}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!--edit/delete-->
+                    <div class='row' ng-show='userData && answer.author.username === userData.username'>
+                        <div class='col-xs-12'>
+                            <div class='row'>
+                                <button class='btn btn-xs btn-warning' ng-click='editAnswer(answer)'>Edit</button>
+                                <button class='btn btn-xs btn-danger' ng-click='deleteAnswer(answer)'>Delete</button>
                             </div>
                         </div>
                     </div>

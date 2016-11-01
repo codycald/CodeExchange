@@ -18,6 +18,16 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
         controller: 'questionDetailCtrl'
     })
     
+    .when('/question/:id/edit', {
+        templateUrl: 'templates/question-edit.html',
+        controller: 'questionEditCtrl'
+    })
+    
+    .when('/question/:id/answer/:ans_id/edit', {
+        templateUrl: 'templates/answer-edit.html',
+        controller: 'answerEditCtrl'
+    })
+    
     .when('/login', {
         templateUrl: 'templates/login.html',
         controller: 'loginCtrl'

@@ -11,7 +11,7 @@ angular.module('stackoverflowclone.service')
     });
     
     this.getQuestionList = function(cb) {
-        $http.get('/api/questions').then(cb);
+        return $http.get('/api/questions').then(cb);
     }
     
     this.getQuestionById = function(id, cb)  {
@@ -23,6 +23,22 @@ angular.module('stackoverflowclone.service')
             questions.push(question);
             $location.path('/');
         });
+    }
+    
+    this.editQuestion = function(question_id, data) {
+        return $http.put('/api/questions/' + question_id, data);
+    }
+    
+    this.deleteQuestion = function(question_id) {
+        $http.delete('/api/questions/' + question_id);
+    }
+    
+    this.editAnswer = function(question_id, answer_id, data) {
+        return $http.put('/api/questions/' + question_id + '/answer' + answer_id, data);
+    }
+    
+    this.deleteAnswer = function(question_id, ans) {
+        $http.delete('/api/questions/' + question_id + '/answer/' + ans._id);
     }
     
     this.submitAnswer = function(question_id, answer, cb) {

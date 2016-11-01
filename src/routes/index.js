@@ -3,8 +3,6 @@ var router = express.Router();
 var User = require('../models/user');
 var Question = require('../models/question');
 var passport = require('passport');
-var sanitizer = require('express-sanitizer');
-var validator = require('express-validator');
 
 // Login
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -71,6 +69,7 @@ router.get('/questions/:id', function(req, res) {
 
 // Create
 router.post('/questions', isLoggedIn, function(req, res) {
+
     req.body.title = req.sanitize(req.body.title);
     req.body.text = req.sanitize(req.body.text);
     
@@ -96,14 +95,40 @@ router.post('/questions', isLoggedIn, function(req, res) {
     });
 });
 
+// Update
+router.put('/questions/:id', checkQuestionOwnership, function(req, res) {
+
+    req.body.title = req.sanitize(req.body.title);
+    req.body.text = req.sanitize(req.body.text);
+
+    Question.findByIdAndUpdate(req.params.id, { $set: { title: req.body.title, text: req.body.text } }, function(err, question) {
+        if (err) {
+            return res.status(500).json({message: err.message});
+        }
+        res.json({question: question});
+    });
+});
+
+// Destroy
+router.delete('/questions/:id', checkQuestionOwnership, function(req, res) {
+    Question.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            return res.status(500).json({message: err.message});
+        }
+        res.status(200).json({message: 'Question deleted'});
+    });
+});
+
+
 //================
 // Answer routes
 //================
 
+// Create
 router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
     
     req.body.text = req.sanitize(req.body.text);
-    
+
     Question.findById(req.params.id, function(err, question) {
        if (err) {
            return res.status(500).json({message: err.message});
@@ -124,6 +149,45 @@ router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
     });
 });
 
+// Update
+router.put('/questions/:id/answer/:ans_id', checkAnswerOwnership, function(req, res) {
+    
+    req.body.text = req.sanitize(req.body.text);
+    
+    Question.findById(req.params.id, function(err, question) {
+       if (err) {
+           return res.status(500).json({message: err.message});
+       }
+       var answer = question.answers.find(function(ans) {
+           return ans._id == req.params.ans_id;
+       });
+       
+       answer.text = req.body.text;
+       question.save();
+       res.json({answer: answer});
+    });
+});
+
+// Destroy
+router.delete('/questions/:id/answer/:ans_id', checkAnswerOwnership, function(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+        if (err) {
+            return res.status(500).json({message: err.message});
+        }
+        var answers = question.answers.filter(function(ans) {
+            return ans._id != req.params.ans_id;
+        });
+        
+        question.answers = answers;
+        question.save();
+        
+        res.status(200).json({message: 'Answer deleted'});
+    });
+});
+
+//================
+// Comment Routes
+//================
 router.post('/questions/:id/comment', isLoggedIn, function(req, res) {
     
     req.body.text = req.sanitize(req.body.text);
@@ -301,5 +365,39 @@ function isLoggedIn(req, res, next) {
     }
     return res.status(500).json({ message: 'You must be logged in to do that' });
 }
+
+function checkQuestionOwnership(req, res, next) {
+    if (req.isAuthenticated()) {
+        Question.findById(req.params.id, function(err, question) {
+            if (err) return res.status(500).json({message: 'Something went wrong'});
+            if (question.author.id.equals(req.user.id)) {
+                return next();
+            }
+            res.status(401).json({message: 'Unauthorized access'});
+        });
+    } else {
+        res.status(401).json({message: 'Unauthorized'});
+    }
+}
+
+function checkAnswerOwnership(req, res, next) {
+    if (req.isAuthenticated()) {
+        Question.findById(req.params.id, function(err, question) {
+            if (err) return res.status(500).json({message: 'Something went wrong'});
+
+            var answer = question.answers.find(function(ans) {
+                return ans._id == req.params.ans_id;
+            });
+
+            if (answer && answer.author.id.equals(req.user.id)) {
+                return next();
+            }
+            res.status(403).json({message: 'Unauthorized'});
+        });
+    } else {
+        res.status(401).json({message: 'Unauthorized'});
+    }
+}
+
 
 module.exports = router;

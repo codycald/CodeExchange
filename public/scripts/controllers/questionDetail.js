@@ -41,6 +41,32 @@ angular.module('stackoverflowclone')
         });
     }
     
+    $scope.editQuestion = function(question) {
+        if (question.author.username === $scope.userData.username) {
+            $location.path('/question/' + question._id + '/edit');
+        }
+    }
+    
+    $scope.deleteQuestion = function(question) {
+        if (question.author.username === $scope.userData.username) {
+            dataService.deleteQuestion($routeParams.id);
+            $location.path('/');
+        }
+    }
+    
+    $scope.editAnswer = function(answer) {
+        if (answer.author.username === $scope.userData.username) {
+            $location.path('/question/' + $routeParams.id + '/answer/' + answer._id + '/edit');
+        }
+    }
+    
+    $scope.deleteAnswer = function(answer) {
+        if (answer.author.username === $scope.userData.username) {
+            dataService.deleteAnswer($routeParams.id, answer);
+            $location.path('/');
+        }
+    }
+    
     $scope.checkLoginStatus = function() {
         if (!sessionService.getUser()) {
             $location.path('/login');

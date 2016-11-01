@@ -15,8 +15,9 @@ mongoose.connect('mongodb://localhost/stackoverflowclone');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(sanitizer());
 app.use(validator());
+app.use(sanitizer());
+
 
 // Passport config
 app.use(require("express-session")({
