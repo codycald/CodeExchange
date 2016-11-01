@@ -10,7 +10,8 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
     
     .when('/question/new', {
         templateUrl: 'templates/question-new.html',
-        controller: 'questionCreationCtrl'
+        controller: 'questionCreationCtrl',
+        restricted: true
     })
     
     .when('/question/:id', {
@@ -46,7 +47,7 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
     
 })
 
-.run(function($rootScope, authService) {
+.run(function($rootScope, $location, authService) {
     authService.retrieveLoginStatus()
     .then(function(userData) {
         if (userData.authenticated) {
@@ -55,4 +56,17 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
             $rootScope.userData = null;
         }
     });
+    
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+        $rootScope.alerts = [];
+        if (next.restricted && !authService.isLoggedIn()) {
+            event.preventDefault();
+            $location.path('/login');
+        }
+    });
+    
+    $rootScope.closeAlert = function(index) {
+        $rootScope.alerts.splice(index, 1);
+    }
+    
 });

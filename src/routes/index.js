@@ -20,7 +20,7 @@ router.post('/register', function(req, res) {
     
     User.register({username: req.body.username}, req.body.password, function(err, user) {
         if (err) {
-            console.log(err);
+            return res.status(400).json({message: err.message});
         } else {
             passport.authenticate('local')(req, res, function() {
                 res.json({username: req.user.username, votedPosts: user.votedPosts});

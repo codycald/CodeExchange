@@ -17,6 +17,14 @@
             </div>
         </div>
         
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xs-10 col-xs-offset-1'>
+                    <div uib-alert ng-repeat='alert in alerts' ng-class="'alert-' + (alert.type || 'warning')" close='closeAlert($index)'>{{alert.message}}</div>
+                </div>
+            </div>
+        </div>
+        
         <div ng-view></div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -29,6 +37,7 @@
         <script type="text/javascript" src="/scripts/services/data.js"></script>
         <script type="text/javascript" src="/scripts/services/auth.js"></script>
         <script type="text/javascript" src="/scripts/services/session.js"></script>
+        <script type="text/javascript" src="/scripts/services/alert.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>
         <script type="text/javascript" src="/scripts/controllers/questionCreation.js"></script>
         <script type="text/javascript" src="/scripts/controllers/questionDetail.js"></script>
