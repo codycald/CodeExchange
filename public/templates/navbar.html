@@ -12,9 +12,15 @@
 
     <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
         <ul class="nav navbar-nav navbar-right">
+            <li><a href='#/question/new'>Ask a Question</a></li>
             <li ng-show='!userData'><a href="#/login">Login</a></li>
             <li ng-show='!userData'><a href="#/register">Sign Up</a></li>
-            <li ng-show='userData'><a ng-controller='logoutCtrl' href='' ng-click='logout()'>Logout</a></li>
+            <li ng-show='userData' uib-dropdown on-toggle='toggled(open)'>
+                <a href id='simple-dropdown' uib-dropdown-toggle>{{userData.username}}<span class='caret'></span></a>
+                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                    <li><a ng-controller='logoutCtrl' href='' ng-click='logout()'>Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

@@ -31,6 +31,7 @@ angular.module('stackoverflowclone')
         $scope.checkLoginStatus();
         dataService.upvote($routeParams.id, {id: qaPost._id}).then(function(res){
             qaPost.votes =  res.data.voteTotal;
+            sessionService.updateUser('votedPosts', res.data.votedPosts);
         });
     }
     
@@ -38,6 +39,7 @@ angular.module('stackoverflowclone')
         $scope.checkLoginStatus();
         dataService.downvote($routeParams.id, {id: qaPost._id}).then(function(res){
             qaPost.votes = res.data.voteTotal;
+            sessionService.updateUser('votedPosts', res.data.votedPosts);
         });
     }
     
@@ -81,5 +83,32 @@ angular.module('stackoverflowclone')
             return false;
         }
     }
+    
+    $scope.isupvoted = function(qaPost) {
+        if (!qaPost) return false;
+        if ($scope.userData && $scope.userData.votedPosts) {
+            var foundPost = $scope.userData.votedPosts.find(function(post) {
+                return post.id == qaPost._id;
+            });
+            if (foundPost) {
+                return foundPost.isupvoted;
+            }
+        }
+        return false;
+    }
+    
+    $scope.isdownvoted = function(qaPost) {
+        if (!qaPost) return false;
+        if ($scope.userData && $scope.userData.votedPosts) {
+            var foundPost = $scope.userData.votedPosts.find(function(post) {
+                return post.id == qaPost._id;
+            });
+            if (foundPost) {
+                return !foundPost.isupvoted;
+            }
+        }
+        return false;
+    }
+    
     
 });

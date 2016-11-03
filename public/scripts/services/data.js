@@ -34,7 +34,7 @@ angular.module('stackoverflowclone.service')
     }
     
     this.editAnswer = function(question_id, answer_id, data) {
-        return $http.put('/api/questions/' + question_id + '/answer' + answer_id, data);
+        return $http.put('/api/questions/' + question_id + '/answer/' + answer_id, data);
     }
     
     this.deleteAnswer = function(question_id, ans) {

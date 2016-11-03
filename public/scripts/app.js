@@ -47,7 +47,7 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
     
 })
 
-.run(function($rootScope, $location, authService) {
+.run(function($rootScope, $location, authService, alertService) {
     authService.retrieveLoginStatus()
     .then(function(userData) {
         if (userData.authenticated) {
@@ -61,6 +61,7 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
         $rootScope.alerts = [];
         if (next.restricted && !authService.isLoggedIn()) {
             event.preventDefault();
+            alertService.alert('danger', 'Please login first');
             $location.path('/login');
         }
     });
