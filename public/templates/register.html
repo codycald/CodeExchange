@@ -3,6 +3,17 @@
         <div id='register-form' class='col-xs-5 col-xs-offset-3'>
             <h3>Register</h3>
             <form ng-submit='register()' name='registerForm'>
+                
+                <div class='form-group' ng-class=" { 'has-error': registerForm.email.$touched && registerForm.email.$invalid }">
+                    <label for='emailInput'>Email</label>
+                    <input class='form-control' type='email' ng-model='email' name='email' id='emailInput' required>
+                </div> 
+                
+                <div class='help-block' ng-messages='registerForm.email.$error' ng-if='registerForm.email.$touched'>
+                    <p ng-message='email'>Invalid email</p>
+                    <p ng-message='required'>Email required</p>
+                </div>
+                
                 <div class='form-group' ng-class=" { 'has-error': registerForm.username.$touched && registerForm.username.$invalid }">
                     <label for='usernameInput'>Username</label>
                     <input class='form-control' type='text' ng-model='username' ng-pattern='/^[a-zA-Z0-9]*$/' ng-trim='false' ng-minlength='3' name='username' id='usernameInput' required/>

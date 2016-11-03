@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var Question = require('../models/question');
 var passport = require('passport');
+var gravatar = require('gravatar');
 
 // Login
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -12,13 +13,16 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
 // Register
 router.post('/register', function(req, res) {
     req.checkBody('username', 'Invalid username').isAlphanumeric();
+    req.checkBody('email', 'Enter a valid email address').isEmail();
     var err = req.validationErrors();
     
     if (err) {
-        return res.status(403).json({err: err});
-    } 
+        return res.status(403).json({message: err});
+    }
     
-    User.register({username: req.body.username}, req.body.password, function(err, user) {
+    var url = gravatar.url(req.body.email, {protocol: 'https'});
+    
+    User.register({username: req.body.username, email: req.body.email, url: url}, req.body.password, function(err, user) {
         if (err) {
             return res.status(400).json({message: err.message});
         } else {
@@ -78,7 +82,8 @@ router.post('/questions', isLoggedIn, function(req, res) {
         text: req.body.text,
         author: {
             id: req.user._id,
-            username: req.body.username
+            username: req.body.username,
+            url: req.user.url
         },
         votes: 0,
         views: 0,
@@ -137,7 +142,8 @@ router.post('/questions/:id/answer', isLoggedIn, function(req, res) {
            text: req.body.text,
            author: {
                username: req.body.username,
-               id: req.user._id
+               id: req.user._id,
+               url: req.user.url
            },
            votes: 0,
            comments: [],

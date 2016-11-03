@@ -3,6 +3,8 @@ var passportLocalMongoose = require('passport-local-mongoose');
 
 var userSchema = new mongoose.Schema({
     username: String,
+    email: String,
+    url: String,
     votedPosts: [ 
         {
             id: mongoose.Schema.Types.ObjectId,

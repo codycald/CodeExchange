@@ -5,7 +5,8 @@ var Author = new mongoose.Schema({
     id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    url: String
 });
 
 var Comment = new mongoose.Schema({
