@@ -43,6 +43,10 @@ angular.module('stackoverflowclone', ['stackoverflowclone.service', 'ui.bootstra
         controller: 'logoutCtrl'
     })
     
+    .when('/about', {
+        templateUrl: 'templates/about.html'
+    })
+    
     .otherwise('/');
     
 })
