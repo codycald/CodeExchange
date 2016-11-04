@@ -11,7 +11,7 @@ var LocalStrategy = require('passport-local');
 var routes = require('./routes');
 var User = require('./models/user');
 
-mongoose.connect('mongodb://localhost/stackoverflowclone');
+mongoose.connect(process.env.DATABASEURL || 'mongodb://localhost/stackoverflowclone');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
